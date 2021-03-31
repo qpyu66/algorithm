@@ -1,30 +1,33 @@
+from typing import List
+
+
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        str = ["flower","flow","flight"]
-        lslen = len(str)
-        sortedwords = sorted(str, key=len)
+        lslen = len(strs)
+        sortedwords = sorted(strs, key=len)
         sortlen = len(sortedwords[0])
+        print(sortedwords, type(sortedwords), sortlen)
 
         oc = []
         for s in range(lslen):
-            os = list(str[s])
+            os = list(sortedwords[s])
             oc.append(os)
 
         oclen = len(oc)
         alloc = []
-        for i in range(len(oc)):
-            for j in range(sortlen):
-                if (oc[i][j] == oc[i + 1][j] == oc[i + 2][j]):
-                    print('ok', oc[i][j], oc[i + 1][j], oc[i + 2][j])
-                    alloc.append(oc[i][j])
-            alloc.append("")
+
+        for j in range(sortlen):
+            if (oc[0][j] == oc[1][j] == oc[2][j]):
+                print('ok', oc[0][j], oc[1][j], oc[2][j])
+                alloc.append(oc[0][j])
+                print(j)
+
+        alloc.append("")
 
         return ''.join(alloc)
 
-        # ans = ''.join(alloc)
-        #
-        #
-        # return ans
 
-
-
+s = Solution()
+# strs = ['flower', 'flow', 'flight']
+strs = ['flower', 'flowes', 'floweds']
+s.longestCommonPrefix(strs)
