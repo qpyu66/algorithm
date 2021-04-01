@@ -1,29 +1,26 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-#s="()[]"
-s="([)]"
-#s="(){()[{][]"
-slist = list(s)
-an =[]
-print(slist)
-  
-for i in s:
-    #print(i)
-    if i == '[' or i == '{' or i == '(' :
-        print('[i > ',i)
-        an.append(i)
-    #괄호 맞는 것 끼리 맨 뒤에서부터 pop      
-    elif i == ']' or i == '}' or i == ')':
-        an.pop()
+        slist = list(s)
+        slen = len(slist)       
+        an =[]        
 
-print('an> ', an)
-
-if len(an) != 0:
-    print('false')
-        return ""
+        if len(s) % 2 !=0:
+            return False
+        if len(s) == 0:
+            return False
         
-    
+        for i in range(0,slen):
+            if slist[i] in ['(','{','['] :
+                an.append(slist[i])
+            else:
+                if slist[i] == ')' and an.pop() !='(' :   
+                    return False
+                elif slist[i] == '}' and an.pop() !='{' :   
+                    return False
+                elif slist[i] == ']' and an.pop() !='[' :   
+                    return False
+        return True
     
 s = Solution()
-lists = "()"
+lists = "()[]"
 s.isValid(lists)    
