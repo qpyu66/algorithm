@@ -1,26 +1,26 @@
 from typing import List
-from collections import OrderedDict
 
 
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         lslen = len(strs)
-        sortedwords = sorted(strs, key=len)
-        sortlen = len(sortedwords[0])
+        print(lslen, strs, type(strs))
+        sw = sorted(strs, key=len)
+        swlen = len(sw[0])
+        print('s> ', sw, ', ', swlen)
 
         oc = []
-        for i in range(sortlen):
-            a = sortedwords[0][i]
+        for i in range(swlen):
+            a = sw[0][i]
+            # print('i >',i,' ,a > ',a)
             for j in range(1, lslen):
-                b = sortedwords[j][i]
-                if a != b:
-                    oc.pop()
-                    break
+                b = sw[j][i]
+                if sw[0][i] != sw[j][i]:
+                    print('i> ', i)
+                    return sw[0][:i]
 
-                oc.append(a)
-        ans = ''.join(OrderedDict.fromkeys(oc))
-        return ans
 
 s = Solution()
-strs = ["flower","flow","flight"]
+strs = ["flower", "flow", "flight"]
+# strs = ["dog","racecar","car"]
 s.longestCommonPrefix(strs)
