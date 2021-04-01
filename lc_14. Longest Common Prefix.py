@@ -3,24 +3,25 @@ from typing import List
 
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
-        lslen = len(strs)
-        print(lslen, strs, type(strs))
-        sw = sorted(strs, key=len)
-        swlen = len(sw[0])
-        print('s> ', sw, ', ', swlen)
 
-        oc = []
-        for i in range(swlen):
-            a = sw[0][i]
-            # print('i >',i,' ,a > ',a)
+        lslen = len(strs)
+        sortedwords = sorted(strs, key=len)
+        non = ""
+        if not str:
+            return non
+        sortlen = len(sortedwords[0])
+
+        for i in range(sortlen):
             for j in range(1, lslen):
-                b = sw[j][i]
-                if sw[0][i] != sw[j][i]:
-                    print('i> ', i)
-                    return sw[0][:i]
+                if sortedwords[0][i] != sortedwords[j][i]:
+                    return sortedwords[0][:i]
 
 
 s = Solution()
-strs = ["flower", "flow", "flight"]
+# strs = ["flower","flow","flight"]
 # strs = ["dog","racecar","car"]
+ #빈 리스트가 들어가면 0 인덱스에 해당하는 element가 없어서 sortlen에서 에러남
+strs = [""]
 s.longestCommonPrefix(strs)
+
+
