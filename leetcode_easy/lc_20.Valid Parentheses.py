@@ -30,28 +30,36 @@ Output: true
 
 """
 
-
 class Solution:
     def isValid(self, s: str) -> bool:
-        slist = list(s)
-        slen = len(slist)       
-        an =[]        
-
-        if len(s) % 2 !=0:
-            return False
-        if len(s) == 0:
+        slen = len(s)       
+        an =[]
+        
+        if (len(s) == 0):
+            return True
+        #입력 받은 str의 개수가 홀수 인 경우
+        elif (len(s) % 2 !=0):
             return False
         
+        
         for i in range(0,slen):
-            if slist[i] in ['(','{','['] :
-                an.append(slist[i])
+            #오픈괄호 리스트에 추가
+            if (s[i] in ['(','{','['] ):
+                an.append(s[i]) 
             else:
-                if slist[i] == ')' and an.pop() !='(' :   
+                #print("an > ", an, i, len(an))                
+                if (len(an) == 0):
                     return False
-                elif slist[i] == '}' and an.pop() !='{' :   
+                #문자와 an에서 마지막의 문자가 같지 않은 경우
+                elif (s[i] == ')' and an.pop() !='(') :   
                     return False
-                elif slist[i] == ']' and an.pop() !='[' :   
+                elif (s[i] == '}' and an.pop() !='{') :  
                     return False
+                elif (s[i] == ']' and an.pop() !='[') :   
+                    return False  
+        #for문 끝나고 an안에 개수가 0이 아닌 경우
+        if (len(an) != 0):
+            return False
         return True
     
 s = Solution()
@@ -61,3 +69,4 @@ print(s.isValid("(]"))
 print(s.isValid("(("))
 print(s.isValid("([)]"))
 print(s.isValid("{[]}"))
+ 
