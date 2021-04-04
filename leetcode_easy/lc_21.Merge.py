@@ -24,17 +24,22 @@ Both l1 and l2 are sorted in non-decreasing order.
 """
 
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-        
-        
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+            
         
 class Solution:
     def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
-        print(l1,l2)
-        return
+        #print(l1,l2)
+         #listnode에 값이 없을 때
+        if len(l1) == 0:
+            return l2
+        elif len(l2) == 0:
+            return l1
+
     
     
     
