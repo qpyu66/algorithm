@@ -43,8 +43,6 @@ nums is sorted in ascending order.
 
 from typing import List
 
-from typing import List
-
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         count = 1;
