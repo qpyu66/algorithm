@@ -35,20 +35,10 @@ haystack and needle consist of only lower-case English characters.
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
         
-        
-        if (needle in haystack):
-            if(): #배열안에 있다면 몇번째 배열인지 출력
-                print("")
-            return "ok"
-        if (needle not in haystack):
-            return -1
-        
-        #return haystack
-        
- 
+        return haystack.find(needle)
+         #python 내장함수 find를 사용해서 해당 문자열의 index를 반환해줌
 
 
- 
 s = Solution()
 print(s.strStr("hello","ll"))
 print(s.strStr("aaaaa","bba"))
