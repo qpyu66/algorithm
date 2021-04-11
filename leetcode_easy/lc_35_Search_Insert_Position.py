@@ -33,6 +33,7 @@ nums contains distinct values sorted in ascending order.
 -104 <= target <= 104
 
 """
+from typing import List
 
 
 class Solution:

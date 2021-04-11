@@ -37,22 +37,18 @@ class Solution:
         mlist = [nums[0]] * nlen
         if nlen <=1:
             return nums[0]
-        
-        
-        for i in range(1,nlen):            
-            if (mlist[i-1] + nums[i] > nums[i]) :
-                mlist[i] = mlist[i-1]+nums[i]
-            else:
-                mlist[i] = nums[i]
             
-            mlist[i] = mlist[i-1]+nums[i] if mlist[i-1] + nums[i] > nums[i] else nums[i]
-            result = max(mlist)
-            return result
-        
-        #return nums
+        #음수인 경우 0 출력됨
+        for x in nums:
+            current_sum = max(0, current_sum + x)
+            best_sum = max(best_sum, current_sum)
+        return best_sum
         
         
 s = Solution()
 print(s.maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 print(s.maxSubArray([1]))
 print(s.maxSubArray([5,4,-1,7,8]))
+print(s.maxSubArray([-1]))
+print(s.maxSubArray([-2,-1]))
+
