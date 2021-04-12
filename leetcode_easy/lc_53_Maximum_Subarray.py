@@ -33,16 +33,12 @@ from typing import List
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:        
-        nlen = len(nums)
-        mlist = [nums[0]] * nlen
-        if nlen <=1:
-            return nums[0]
-            
-        #음수인 경우 0 출력됨
+        max_sum = min(nums)
+        current_sum = 0
         for x in nums:
-            current_sum = max(0, current_sum + x)
-            best_sum = max(best_sum, current_sum)
-        return best_sum
+            current_sum = max(x, current_sum + x)
+            max_sum = max(max_sum, current_sum)
+        return max_sum
         
         
 s = Solution()
