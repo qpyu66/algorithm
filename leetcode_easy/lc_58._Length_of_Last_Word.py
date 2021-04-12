@@ -23,7 +23,7 @@ s consists of only English letters and spaces ' '.
 """
 
 
-
+#runtime 32 ms
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
         sp = s.split()
@@ -33,6 +33,17 @@ class Solution:
             return 0
         else:
             return len(sp[-1])
+
+#runtime 16 ms 
+#code refactor
+# class Solution:
+#     def lengthOfLastWord(self, s: str) -> int:
+#         words = s.split()
+#         for i in words:
+#             i.strip()
+#         if words == []:
+#             return 0
+#         return len(words[-1])
 
         
 s = Solution()
