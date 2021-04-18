@@ -29,4 +29,24 @@ Constraints:
 """
 
 #Recursion with memoization
+class Solution(object):
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        def clim(n):
+            if (n < 3):
+                return n
+            
+            else:
+                return clim(n-1)+clim(n-2)
+        
+        return clim(n)
+       
+    
+s = Solution()
+print(s.climbStairs(2))
+print(s.climbStairs(3))
+print(s.climbStairs(5))         
 
