@@ -27,7 +27,7 @@ Constraints:
 1 <= n <= 45
 
 """
-
+#Time Limit Exceeded
 #Recursion with memoization
 class Solution(object):
     def climbStairs(self, n):
@@ -43,6 +43,23 @@ class Solution(object):
                 return clim(n-1)+clim(n-2)
         
         return clim(n)
+
+
+#Time Limit Exceeded
+#fibonacci
+class Solution(object):
+    def climbStairs(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        ans = {1:1,2:2}
+        if n in ans:
+            return ans[n]
+        else:
+            res = self.climbStairs(n-1)+self.climbStairs(n-2)
+            ans[n] = res
+            return res
        
     
 s = Solution()
