@@ -33,16 +33,26 @@ The number of nodes in the tree is in the range [0, 104].
 """
 
 # Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 class Solution:
-    def maxDepth(self, root: TreeNode) -> int:
-        
+    def maxDepth(self, root: TreeNode) -> int:  
+        #root = TreeNode(root)
+        #print(root)     
+        if root == None:
+            return 0
+        else:
+            la = self.maxDepth(root.right)
+            lr = self.maxDepth(root.left)
+        return max(la, lr) + 1
 
 
 
-
-        
+s = Solution()
+print(s.maxDepth([3, 9, 20, None, None, 15, 7]))
+#print(s.maxDepth([3, 9, 20, 10, None, 15, 7, None, None, None, None, None, None, None, 9]))
+#print(s.maxDepth([1, None, 2]))
+#print(s.maxDepth([]))     
