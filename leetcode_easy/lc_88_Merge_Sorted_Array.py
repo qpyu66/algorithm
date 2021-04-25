@@ -43,6 +43,14 @@ class Solution:
         return nums1
         #print(nums1.sort())
         #print(nums1)
+
+
+
+
+#don't use sort
+
+
+
         
         
 
