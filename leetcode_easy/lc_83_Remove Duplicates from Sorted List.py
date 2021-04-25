@@ -23,3 +23,35 @@ The list is guaranteed to be sorted in ascending order.
 
 
 """
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution:
+    def deleteDuplicates(self, head: ListNode) -> ListNode:
+        
+        if head == None:
+            return head
+        t = head.next
+        p = head
+        
+        while t !=None:
+            if p.val == t.val:                
+                p.next = t.next
+                t = t.next
+
+            else:
+                t = t.next
+                p = p.next
+                
+        return head
+    
+
+s = Solution()
+print(s.deleteDuplicates([1,1,2]))
+#print(s.deleteDuplicates([1,1,2,3,3]))
+#print(s.deleteDuplicates(5))         
+
+
