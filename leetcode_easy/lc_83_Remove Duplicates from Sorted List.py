@@ -23,6 +23,7 @@ The list is guaranteed to be sorted in ascending order.
 
 
 """
+   
 
 # Definition for singly-linked list.
 class ListNode:
@@ -52,6 +53,4 @@ class Solution:
 s = Solution()
 print(s.deleteDuplicates([1,1,2]))
 #print(s.deleteDuplicates([1,1,2,3,3]))
-#print(s.deleteDuplicates(5))         
-
-
+#print(s.deleteDuplicates(5))      
