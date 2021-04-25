@@ -35,14 +35,19 @@ class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
         si = [str(int) for int in digits]
         djoin = ''.join(si)
-        #print(djoin)
-        #print(type(djoin))
+        #print(djoin,type(djoin))
         dint = int(djoin)
         print(dint, type(dint))
         a = dint + 1
         print(a,type(a))
-        return list(str(a))
-       
+        #list 문자형
+        ans = list(str(a))
+        #print(ans, type(ans[0]))
+        #list int형 변환
+        ansint = [int (i) for i in ans]
+        #print('ansint > ',ansint,type(ansint[0]))
+        return ansint
+
         
         
 s = Solution()
