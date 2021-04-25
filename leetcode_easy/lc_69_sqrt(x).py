@@ -28,6 +28,12 @@ class Solution:
         # a = math.sqrt(x)
         # print(int(a))
         return int(math.sqrt(x))
+
+
+#code refactoring
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        return int(x**(0.5))
                
         
 s = Solution()
