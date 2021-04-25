@@ -38,9 +38,9 @@ class Solution:
         if root == None:
             return True
         else:
-            return self.mirror(root.right,root.left)
+            return self.sytree(root.right,root.left)
         
-    def mirror(self,q,p):
+    def sytree(self,q,p):
         if (q is None and p is None):
             return True
         elif (q is None or p is None):
@@ -49,7 +49,7 @@ class Solution:
         if(q.val != p.val):
             return False
         else:
-            return self.mirror(q.right,p.left) and self.mirror(q.left,p.right)
+            return self.sytree(q.right,p.left) and self.sytree(q.left,p.right)
                 
 
 #code refactoring 16ms
