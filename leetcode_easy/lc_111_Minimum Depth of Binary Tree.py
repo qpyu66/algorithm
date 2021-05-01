@@ -33,6 +33,25 @@ class TreeNode:
         self.right = right
 class Solution:
     def minDepth(self, root: TreeNode) -> int:
+
+        if root == None:
+            return 0
+        elif (root.left is None and root.right is None):
+            return 1
+
+        # elif root.left is None:
+        #     la = self.minDepth(root.right)
+        #     lr = self.minDepth(root.left)
+        #     return min(la, lr) + 1     
+        # elif root.right is None:
+        #     la = self.minDepth(root.right)
+        #     lr = self.minDepth(root.left)
+        #     return min(la, lr) + 1
+        else:
+            la = self.minDepth(root.right)
+            lr = self.minDepth(root.left)
+        return min(la, lr) + 1
+
         
 
     def createnode(self,x):
@@ -45,4 +64,9 @@ class Solution:
         return node
 
         
+
+s = Solution()
+print(s.minDepth([3,9,20,null,null,15,7]))
+print(s.minDepth([2,null,3,null,4,null,5,null,6]))
+
 
