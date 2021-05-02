@@ -33,37 +33,30 @@ class TreeNode:
         self.right = right
 class Solution:
     def minDepth(self, root: TreeNode) -> int:
-
+        
         if root == None:
             return 0
-        elif (root.left is None and root.right is None):
+        elif root.left==None and root.right==None:
             return 1
-
-        # elif root.left is None:
-        #     la = self.minDepth(root.right)
-        #     lr = self.minDepth(root.left)
-        #     return min(la, lr) + 1     
-        # elif root.right is None:
-        #     la = self.minDepth(root.right)
-        #     lr = self.minDepth(root.left)
-        #     return min(la, lr) + 1
-        else:
-            la = self.minDepth(root.right)
-            lr = self.minDepth(root.left)
-        return min(la, lr) + 1
-
+        elif root.left!=None and root.right!=None:
+            lr = self.minDepth(root.right)
+            le = self.minDepth(root.left)
+            return min(lr, le) + 1
+        if root.left!=None:
+            return self.minDepth(root.left)+1
+        return self.minDepth(root.right)+1
         
 
-    def createnode(self,x):
-        node = TreeNode(x)
-        for i in range(1,len(x)):      
-            if i %2 == 1:
-                node.left = x[i]
-            else:
-                node.right = x[i]
-        return node
+    # def createnode(self,x):
+    #     node = TreeNode(x)
+    #     for i in range(1,len(x)):      
+    #         if i %2 == 1:
+    #             node.left = x[i]
+    #         else:
+    #             node.right = x[i]
+    #     return node
 
-        
+
 
 s = Solution()
 print(s.minDepth([3,9,20,null,null,15,7]))
