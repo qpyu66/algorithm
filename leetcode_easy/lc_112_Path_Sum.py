@@ -29,6 +29,22 @@ The number of nodes in the tree is in the range [0, 5000].
 
 
 """
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
+        
 
 
 
+
+
+
+s = Solution()
+print(s.hasPathSum([5,4,8,11,null,13,4,7,2,null,null,null,1],22))
+print(s.hasPathSum([1,2,3],5))
+print(s.hasPathSum([1,2],0))
