@@ -47,7 +47,23 @@ def solution(board, moves):
                 break
     print(ans)
 
-    
+    #같은거 지우기
+    #한번만 반복함
+    same = []
+    for i in range(len(ans)-1):
+        print('i > ', ans[i],ans[i+1])
+        if ans[i] == ans[i+1]:
+            #ans.remove(ans[i])
+            #print(ans[i],ans[i+1])
+            same.append(ans[i])
+            same.append(ans[i+1])
+            ans.remove(ans[i+1])
+            ans.remove(ans[i])
+            #i=0
+            break
+        i=0
+    print(ans)
+    print(same,len(same))
     
     
 print(solution([[0,0,0,0,0],
