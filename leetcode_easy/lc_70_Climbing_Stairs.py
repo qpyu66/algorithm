@@ -29,25 +29,28 @@ Constraints:
 """
 #Time Limit Exceeded
 #Recursion with memoization
-class Solution(object):
-    def climbStairs(self, n):
+class Solution:
+    def climbStairs(self, n: int) -> int:
         """
         :type n: int
         :rtype: int
         """
-        def clim(n):
-            if (n < 3):
-                return n
-            
-            else:
-                return clim(n-1)+clim(n-2)
-        
-        return clim(n)
+        f1 = 1
+        f2 = 2
+        if n==1:
+            return 1
+        if n==2:
+            return 2
+        for i in range(2,n):
+            fn = f1+f2
+            f1=f2
+            f2 = fn
+        return fn
 
 
 #Time Limit Exceeded
 #fibonacci
-class Solution(object):
+class Solution1(object):
     def climbStairs(self, n):
         """
         :type n: int
