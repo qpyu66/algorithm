@@ -48,21 +48,24 @@ class Solution:
         return fn
 
 
-#Time Limit Exceeded
-#fibonacci
-class Solution1(object):
-    def climbStairs(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        ans = {1:1,2:2}
-        if n in ans:
-            return ans[n]
-        else:
-            res = self.climbStairs(n-1)+self.climbStairs(n-2)
-            ans[n] = res
-            return res
+#code refactoring
+class Solution1:
+    def climbStairs(self, n: int) -> int:
+        # strategy: implement recurrence
+        # f(n) = f(n-1) + f(n-2)
+        
+        @functools.lru_cache(maxsize=None)
+        def clime(n):
+            if n == 0:
+                return 1
+            if n == 1:
+                return 1
+            
+            return clime(n - 1) + clime(n - 2)
+        
+        return clime(n)
+
+
        
     
 s = Solution()
