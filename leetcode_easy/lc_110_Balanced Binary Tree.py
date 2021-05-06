@@ -39,6 +39,55 @@ class TreeNode:
 class Solution:
     def isBalanced(self, root: TreeNode) -> bool:
 
-        return ""
+         if root is None:
+            return True
+        elif self.rootdepth(root) < 0:
+            return False
+        else:
+            return True
+            
+    def rootdepth(self,r):
+        if r is None:
+            return 1
+        ld = self.rootdepth(r.left)
+        rd = self.rootdepth(r.right)
+        lrd = ld-rd
+        rld = rd-ld
+
+        #음수일때
+        if lrd < 0:
+            lrd *= -1
+        elif rld < 0:
+            rld *= -1   
+
+        if ld < 0 or rd < 0:
+            return -1        
+        elif lrd > 1 or rld >1:
+            return -1       
+        else:
+            return max(ld,rd)+1
+
+#
+class Solution1(object):
+    def isBalanced(self, root):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        if root is None:
+            return True
+        else:
+            if self.isBalanced(root.left) and self.isBalanced(root.right):
+                return abs(self.depth(root.left) - self.depth(root.right)) <= 1
+            else:
+                return False
+
+    def depth(self, root):
+        if root is None:
+            return -1
+        else:
+            return max(self.depth(root.left), self.depth(root.right)) + 1
 
 
+s = Solution()
+print(s.isBalanced([3,9,20,null,null,15,7]))   

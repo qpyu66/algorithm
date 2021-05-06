@@ -1,7 +1,7 @@
 # algorithm
 ### leetcode
 
-Practicing leetcode problems 
+✏️ Practicing leetcode problems 
 
 
 | No | Title | Solution | Difficulty | 
