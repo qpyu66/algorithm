@@ -41,7 +41,7 @@ class Solution:
 
 
 #code refactoring
-class Solution:
+class Solution1:
     def generate(self, numRows: int) -> List[List[int]]:
         if numRows == 1:
             return [[1]]

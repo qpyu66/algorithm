@@ -54,7 +54,6 @@ class Solution1:
         # strategy: implement recurrence
         # f(n) = f(n-1) + f(n-2)
         
-        @functools.lru_cache(maxsize=None)
         def clime(n):
             if n == 0:
                 return 1
