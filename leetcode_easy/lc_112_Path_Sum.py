@@ -37,7 +37,26 @@ class TreeNode:
         self.right = right
 class Solution:
     def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
-        
+        root = TreeNode(root)
+        slist = self.pasum(root, 0)
+        for n in slist:
+            if n == targetSum:
+                return True   
+            print("")
+        return False       
+    def pasum(self,root, nsum):
+        #unsupported operand type(s) for +=: 'int' and 'list'
+        if (root.left is None) and (root.right is None):
+            nsum += root.val
+            return nsum
+        else:
+            nsum = nsum+root.val
+        return self.pasum(root.left, nsum) + self.pasum(root.right, nsum)
+
+
+s = Solution()
+#print(s.hasPathSum([5,4,8,11,13,4,7,2,1],22))
+print(s.hasPathSum([1,2,3],5))
 
 
 
@@ -46,5 +65,5 @@ class Solution:
 
 s = Solution()
 print(s.hasPathSum([5,4,8,11,null,13,4,7,2,null,null,null,1],22))
-print(s.hasPathSum([1,2,3],5))
-print(s.hasPathSum([1,2],0))
+#print(s.hasPathSum([1,2,3],5))
+#print(s.hasPathSum([1,2],0))
