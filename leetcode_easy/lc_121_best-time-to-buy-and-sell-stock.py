@@ -26,3 +26,57 @@ Constraints:
 0 <= prices[i] <= 104
 
 """
+
+import time
+start = time.time() 
+from typing import List
+#ValueError: min() arg is an empty sequence
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        mid = len(prices) // 2
+        #print(mid)
+        pmax = max(prices[mid:])
+        pmin = min(prices[:mid])
+        #print(pmax,pmin)
+        if pmax > pmin:
+            print(pmax-pmin)
+        else:
+            print("0")
+
+
+            
+#code refactoring
+class Solution1:
+    def maxProfit(self, prices: List[int]) -> int:
+        current_max = 0
+        current_min = prices[0]
+        
+        for price in prices:
+            if price < current_min:
+                current_min = price
+            elif price - current_min > current_max: 
+                current_max = price - current_min
+
+        return current_max
+        
+                
+        
+s = Solution()
+print(s.maxProfit([7,1,5,3,6,4]))   
+#print("time :", time.time() - start) 
+# print(s.maxProfit([7,6,4,3,1]))   
+# print(s.maxProfit([1,2])) 
+# print(s.maxProfit([1])) 
+# print(s.maxProfit([1,2,4]))   
+
+
+
+
+
+
+
+
+
+
+
+
