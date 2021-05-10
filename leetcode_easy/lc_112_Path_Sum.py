@@ -2,7 +2,13 @@
 Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum.
 
 A leaf is a node with no children.
-
+#               5
+#              / \
+#             4   8
+#            /   / \
+#           11  13  4
+#          /  \      \
+#         7    2      1
  
 
 Example 1:
@@ -52,14 +58,6 @@ class Solution:
         else:
             nsum = nsum+root.val
         return self.pasum(root.left, nsum) + self.pasum(root.right, nsum)
-
-
-s = Solution()
-#print(s.hasPathSum([5,4,8,11,13,4,7,2,1],22))
-print(s.hasPathSum([1,2,3],5))
-
-
-
 
 
 
