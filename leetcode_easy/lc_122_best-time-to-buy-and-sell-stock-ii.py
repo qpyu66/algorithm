@@ -32,3 +32,35 @@ Constraints:
 0 <= prices[i] <= 104
 
 """
+
+from typing import List
+
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        maxp = 0
+        ans=[]
+        for i in range(1,len(prices)):                   
+            if prices[i] > prices[i-1]:
+                maxp = max(0,prices[i] - prices[i-1])
+                ans.append(int(maxp))
+       
+       # print('max> ',maxp,ans)
+        print(sum(ans))
+
+
+
+#code refactoring
+class Solution11:
+    def maxProfit(self, prices):
+        profit = 0
+        for i in range(len(prices) - 1):
+            profit += max(0, prices[i + 1] - prices[i])     
+        return profit
+                
+            
+s = Solution()
+print(s.maxProfit([7,1,5,3,6,4]))        
+#print(s.maxProfit([1,2,3,4,5]))   
+
+
