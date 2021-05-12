@@ -36,3 +36,4 @@
 |**119**| [Pascal's Triangle II](https://leetcode.com/problems/pascals-triangle-ii/) | [python3](./leetcode_easy/lc_119_Pascal's%20Triangle2.py) | Easy |
 |**121**| [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) | [python3](./leetcode_easy/lc_121_best-time-to-buy-and-sell-stock.py) | Easy |
 |**122**| [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/) | [python3](./leetcode_easy/lc_122_best-time-to-buy-and-sell-stock-ii.py) | Easy |
+|**125**| [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) | [python3](./leetcode_easy/lc_125_valid-palindrome.py) | Easy |
