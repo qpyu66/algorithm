@@ -30,18 +30,22 @@ Constraints:
 import time
 start = time.time() 
 from typing import List
-#ValueError: min() arg is an empty sequence
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        mid = len(prices) // 2
-        #print(mid)
-        pmax = max(prices[mid:])
-        pmin = min(prices[:mid])
-        #print(pmax,pmin)
-        if pmax > pmin:
-            print(pmax-pmin)
-        else:
-            print("0")
+        if len(prices) <= 1:
+            return 0
+        dp = []
+        for i in range(1, len(prices)):
+            dp.append(prices[i]-prices[i-1])
+        print(dp)
+
+        maxp = 0
+        minp = 0
+        for j in range(len(dp)):
+            minp = max(0, minp+dp[j])
+            maxp = max(maxp, minp)
+            print('>',minp,maxp)
+        return maxp
 
 
             
