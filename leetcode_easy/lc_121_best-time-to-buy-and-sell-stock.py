@@ -28,8 +28,9 @@ Constraints:
 """
 
 import time
-start = time.time() 
 from typing import List
+start = time.time() 
+#Error
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         if len(prices) <= 1:
@@ -48,9 +49,22 @@ class Solution:
         return maxp
 
 
-            
 #code refactoring
 class Solution1:
+    def maxProfit(self, prices: List[int]) -> int:
+        prof = 0
+        buy = sel = float("inf")
+        for p in prices:
+            if p < buy:
+                buy = sel = p
+            sel = max(sel, p)
+            prof = max(prof, sel-buy)
+        return prof
+                
+
+            
+#code refactoring
+class Solution2:
     def maxProfit(self, prices: List[int]) -> int:
         current_max = 0
         current_min = prices[0]
