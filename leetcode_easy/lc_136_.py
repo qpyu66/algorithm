@@ -26,5 +26,29 @@ Constraints:
 Each element in the array appears twice except for one element which appears only once.
 
 """
+from typing import List
 
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        ans = []
+        
+        for i in nums:
+            if i not in ans:
+                ans.append(i)
+            else:
+                ans.remove(i)
+        return ans[0]
 
+#code refactoring
+class Solution1:
+    def singleNumber(self, nums: List[int]) -> int:
+        
+        ans = nums[0]
+        for i in range(1,len(nums)):
+            ans ^=nums[i]
+        return ans
+        
+        
+s = Solution()
+print(s.singleNumber([2,2,1]))    
+print(s.singleNumber([4,1,2,1,2]))   
