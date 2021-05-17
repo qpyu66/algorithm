@@ -39,8 +39,23 @@ class Solution:
                 ans.remove(i)
         return ans[0]
 
+
 #code refactoring
 class Solution1:
+    def singleNumber(self, nums: List[int]) -> int:
+        tracker = set()
+        for num in nums:
+            if num in tracker:
+                tracker.remove(num)
+            else:
+                tracker.add(num)
+        return tracker.pop()
+
+
+
+
+#code refactoring
+class Solution2:
     def singleNumber(self, nums: List[int]) -> int:
         
         ans = nums[0]
