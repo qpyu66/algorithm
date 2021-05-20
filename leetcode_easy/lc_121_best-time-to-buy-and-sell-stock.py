@@ -77,8 +77,25 @@ class Solution2:
 
         return current_max
         
-                
+#code refactoring
+  """
+7,1,5,3,6,0,4
+4,2,5
+"""
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        minima = 100_000
+        max_profit = 0
+        for price in prices:
+            if price < minima:
+                minima = price
+            elif price-minima > max_profit:
+                max_profit = price-minima
+        return max_profit               
         
+
+
+
 s = Solution()
 print(s.maxProfit([7,1,5,3,6,4]))   
 #print("time :", time.time() - start) 

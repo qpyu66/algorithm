@@ -43,6 +43,7 @@ class Solution:
 #code refactoring
 class Solution1:
     def singleNumber(self, nums: List[int]) -> int:
+        #set : 중복삭제
         tracker = set()
         for num in nums:
             if num in tracker:
