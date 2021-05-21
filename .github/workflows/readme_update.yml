@@ -28,6 +28,8 @@ jobs:
         
     - name: config git
       run: |
+        git config --local user.email "qpyu66@naver.com"
+        git config --local user.name "Bae"
         git add .
         git commit -m "readme auto update"
         
