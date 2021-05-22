@@ -49,7 +49,7 @@ class Solution:
         return self.inorderTraversal(root.left)+[root.val]  + self.inorderTraversal(root.right)
    
 
-#code refactoring
+#code refactoring 20ms
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
