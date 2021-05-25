@@ -21,8 +21,9 @@ def solution(arr, divisor):
             #print("ok",arr[i])
             answer.append(arr[i])
         
-        if len(answer) == 0:
-            answer.append(-1)
+    if len(answer) == 0:
+        answer.append(-1)
+    else:
         answer.sort()
     
     return answer
