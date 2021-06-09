@@ -23,3 +23,20 @@ numbers	return
 """
 
 
+#code refactoring
+class Solution:
+    def convertToTitle(self, n: int) -> str:        
+        res = ''
+        num = n
+        while num:
+            res += chr((num-1)%26 + ord('A'))
+            num = (num-1)//26
+            
+        return res[::-1]
+
+
+s = Solution()
+print(s.convertToTitle(1))   
+print(s.convertToTitle(28))        
+print(s.convertToTitle(701))     
+print(s.convertToTitle(707))           
