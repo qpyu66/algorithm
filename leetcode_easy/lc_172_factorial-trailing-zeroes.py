@@ -26,8 +26,30 @@ Constraints:
 0 <= n <= 104
 """
 
+#0의개수구함 - 문제잘못이해
+# class Solution:
+#     def trailingZeroes(self, n: int) -> int:            
+#         res=1
+#         for i in range(1,n+1,1):
+#             res *= i
+#             #print('i > ',res)
+#         print('res > ',res)
+            
+#         lis = list(str(res))
+#         count=0
+#         ans = lis.count('0')
+#         print(ans)
+            
 
 
+#code refactoring
+class Solution1:
+    def trailingZeroes(self, n: int) -> int:  
+        ans = 0
+        while n:
+            n // 5
+            ans += n
+        return ans
 
 
 
