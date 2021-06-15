@@ -28,4 +28,6 @@ For example, given the above Employee table, the query should return 200 as the 
 
 """
 
-
+# SELECT MAX(salary) AS SecondHighestSalary
+# FROM employee 
+# WHERE salary NOT IN (SELECT MAX(salary) FROM employee)
