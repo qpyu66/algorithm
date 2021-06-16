@@ -37,31 +37,35 @@ Constraints:
 
 """
 
-#wrong answer
-class Solution:
-    def convertToTitle(self, columnNumber: int) -> str:        
+
+class Solution(object):
+    def convertToTitle(self, columnNumber):
+        """
+        :type columnNumber: int
+        :rtype: str
+        """
         n = columnNumber
-        #
+        #나머지 0 아닐때
         if (n > 26 and n%26 != 0):
             ans = []
             s = ''
             while n>26:
                 ans.insert(0,n%26)
-                n = n//26;
+                n = n//26
                 if(n<27):
                     ans.insert(0,n)
             for i in ans:
-                s += chr(i+64)
-            print('s',s)
+                s += chr(i+64)          
             return s
-     #나머지 0일때
-#         elif(n/26 > 1 and n%26 == 0):
-#             s=''
-#             while (n/26>1):
-#                 s+= 'Z'
-#                 n = n//26
-#             s = chr(n+64)+s
-#             return s
+        #나머지 0일때 z값
+        elif(n/26 > 1 and n%26 == 0):
+            s=''
+            while (n/26>1):
+                s+= 'Z'
+                n -=1
+                n = n//26
+            s = chr(n+64)+s
+            return s
         
         #26이하일때
         else:
