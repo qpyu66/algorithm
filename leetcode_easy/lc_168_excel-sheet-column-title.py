@@ -74,17 +74,50 @@ class Solution(object):
 
 
 
+#code refactoring
+# class Solution:
+#     def convertToTitle(self, n: int) -> str:        
+#         res = ''
+#         num = n
+#         while num:
+#             res += chr((num-1)%26 + ord('A'))
+#             num = (num-1)//26
+#         return res[::-1]
+
 
 #code refactoring
-class Solution:
-    def convertToTitle(self, n: int) -> str:        
-        res = ''
-        num = n
-        while num:
-            res += chr((num-1)%26 + ord('A'))
-            num = (num-1)//26
-            
-        return res[::-1]
+# class Solution(object):
+#     def convertToTitle(self, columnNumber):
+#         """
+#         :type columnNumber: int
+#         :rtype: str
+#         """
+#         s = ""
+#         n = columnNumber
+#         while(n>0):
+#             n=n-1
+#             c = n%26
+#             s = chr(65+c) +s
+#             n = n//26
+#         return s
+
+
+
+
+# class Solution(object):
+#     def convertToTitle(self, columnNumber):
+#         """
+#         :type columnNumber: int
+#         :rtype: str
+#         """
+#         abc="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+#         ans=""
+#         n=columnNumber
+#         while n:
+#             n=n-1
+#             ans=abc[n%26]+ans
+#             n=n//26
+#         return ans
 
 
 s = Solution()
