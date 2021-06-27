@@ -30,3 +30,44 @@ Constraints:
 1 <= n <= 231 - 1
 
 """
+"""
+19 - 82 - 68 - 100 - 1
+2 - 4 - 16 - 37 - 30 - 9 - 81 - 65 - 61 - 37
+"""
+
+class Solution(object):
+    def isHappy(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        cur = n
+        count = 0
+        
+        while count !=20:
+            if cur==1:
+                return True
+            
+            temp=0
+            ans = cur
+            while cur !=0:
+                ans = cur%10
+                cur /= 10
+                temp += ans**2
+            cur = temp
+            
+            count +=1
+        return False
+
+
+#code refactoring
+class Solution1(object):
+    def isHappy(self, n):
+        return self.isHappy(sum(int(i)**2 for i in str(n))) if n > 4 else n == 1
+
+
+
+s=Solution()
+print(s.isHappy(19))
+print(s.isHappy(2))
+
