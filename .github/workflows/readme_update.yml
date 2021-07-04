@@ -26,9 +26,9 @@ jobs:
       run: |
          python -m pip install --upgrade pip
          pip install pytz
-    - name: Run readme_update
-      run: | 
-         python script/readme_update.py --push     
+#     - name: Run readme_update
+#       run: | 
+#          python script/readme_update.py --push     
     - name: config git
       run: |
          git config --local user.email "qpyu66@naver.com"
