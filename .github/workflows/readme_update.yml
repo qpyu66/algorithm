@@ -5,9 +5,13 @@ name: Readme Update
 
 on:
   push:
-    branches: [ home ]
-  pull_request:
-    branches: [ home ]
+    branches: [ origin/home ]
+    paths-ignore:
+      - 'README.md'
+      - 'gitignore'
+      - scripts
+      - .github
+    
 
 jobs:
   build:
@@ -17,25 +21,23 @@ jobs:
     - name: Set up Python 
       uses: actions/setup-python@v2
       with:
-        python-version: 3.9
+         python-version: 3.9
     - name: Install pip
       run: |
-        python -m pip install --upgrade pip
-        pip install pytz
-    - name: Run readme_update
-      run: | 
-        python script/readme_update.py --push
-        
+         python -m pip install --upgrade pip
+         pip install pytz
+#     - name: Run readme_update
+#       run: | 
+#          python script/readme_update.py --push     
     - name: config git
       run: |
-        git config --local user.email "qpyu66@naver.com"
-        git config --local user.name "Bae"
-        git add .
-        git commit -m "readme auto update"
-        
-    - name: push
-      uses: ad-m/github-push-action@master
-      with:
-        branch: ${{github.ref }}
-        github_token: ${{secrets.GITHUB_TOKEN }}
+         git config --local user.email "qpyu66@naver.com"
+         git config --local user.name "Bae"
+         git add .
+         git commit -m "readme auto update"       
+#     - name: push
+#       uses: ad-m/github-push-action@master
+#       with:
+#          branch: ${{github.ref }}
+#          github_token: ${{secrets.GITHUB_TOKEN }}
 
