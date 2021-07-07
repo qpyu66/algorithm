@@ -37,20 +37,20 @@ Constraints:
 #         return count
 
 #Sieve of Eratosthenes 에라토스테네스의 체
-# class Solution:
-#     def countPrimes(self, n: int) -> int:
-#         ans = [True] * n
-#         m = int(n ** 0.5) #루트
-#         for i in range(2,m+1):
-#             if ans[i] == True: #i가 소수일 때
-#                 for j in range(i+i,n,i): #i 이후의 배수 false
-#                     ans[j] = False
-#         res = []
-#         for i in range(2,n):
-#             if ans[i] == True:
-#                 print(i)
-#                 res.append(i)
-#         return len(res)
+class Solution:
+    def countPrimes(self, n: int) -> int:
+        ans = [True] * n
+        m = int(n ** 0.5) #루트
+        for i in range(2,m+1):
+            if ans[i] == True: #i가 소수일 때
+                for j in range(i+i,n,i): #i 이후의 배수 false
+                    ans[j] = False
+        res = []
+        for i in range(2,n):
+            if ans[i] == True:
+                print(i)
+                res.append(i)
+        return len(res)
 
 
 s = Solution()
