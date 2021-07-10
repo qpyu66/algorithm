@@ -39,7 +39,7 @@ class Solution(object):
         :type val: int
         :rtype: ListNode
         """
-       
+
         while head and head.val == val:
             head = head.next
         if not head:
@@ -57,5 +57,6 @@ class Solution(object):
         
         
 s=Solution()
-print(s.removeElements([1,2,6,3]))
-
+print(s.removeElements([1,2,6,3,4,5,6],6))
+print(s.removeElements([],1))
+print(s.removeElements([7,7,7,7],7))
