@@ -55,6 +55,28 @@ class Solution(object):
         return head
         
         
+
+#code refactoring
+class Solution(object):
+    def removeElements(self, head, val):
+        """
+        :type head: ListNode
+        :type val: int
+        :rtype: ListNode
+        """
+        dummy = ListNode(0)
+        prev = dummy 
+        prev.next = head 
+        while head:
+            if head.val == val:
+                head = head.next 
+                prev.next = head
+            else:
+                head = head.next 
+                prev = prev.next 
+        return dummy.next 
+
+
         
 s=Solution()
 print(s.removeElements([1,2,6,3,4,5,6],6))
