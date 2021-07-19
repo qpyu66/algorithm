@@ -47,6 +47,37 @@ Constraints:
 All the values of nums are unique.
 nums is sorted in ascending order.
 
-
 """
 
+#1차 풀이 결과틀림
+class Solution(object):
+    def summaryRanges(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[str]
+        """
+        a = 0
+        ans = []
+        
+        for i in range(len(nums)-1):
+            print(nums[i],i)         
+    
+            if (nums[i]+1 == nums[i+1]):
+                continue
+           
+            if nums[i]+1 != nums[i+1]:
+                print("no",i)
+                ans.append(str(nums[a])+"->"+str(nums[i]))
+            else:
+                ans.append((str(nums[a])))
+                
+            a = i+1
+            #print(a,i)
+        print("ans > ",ans)
+            
+            
+            
+            
+s = Solution()
+print(s.summaryRanges([0,1,2,4,5,7]))
+#print(s.summaryRanges([0,2,3,4,6,8,9]))
