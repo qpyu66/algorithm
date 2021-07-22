@@ -35,3 +35,41 @@ Constraints:
 
 """
 
+class Solution(object):
+    def isPowerOfTwo(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        c =0
+        while True:
+            if 2 ** c == n:
+                return True
+            # 거듭제곱이 n 보다 크면 반복할 필요 없음
+            if 2 ** c > n : 
+                return False
+            c +=1    
+        return False   
+
+
+
+#code refactoring
+class Solution(object):
+    def isPowerOfTwo(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        # if n == 
+        if n <= 0:
+            return False
+        if n == 1:
+            return True
+        
+        return n%2 == 0 and self.isPowerOfTwo(n/2)
+                        
+s = Solution()
+print(s.isPowerOfTwo(1))   #True  
+print(s.isPowerOfTwo(16))   #True  
+print(s.isPowerOfTwo(3))    #False
+print(s.isPowerOfTwo(8))    #True  
