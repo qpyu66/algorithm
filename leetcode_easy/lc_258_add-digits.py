@@ -23,3 +23,21 @@ Constraints:
 
 """
 
+class Solution(object):
+    def addDigits(self, num):
+        """
+        :type num: int
+        :rtype: int
+        """    
+        while(num > 0):
+            a = num // 10
+            b = num%10
+            num = a+b 
+            if a == 0:
+                return b
+        return num
+        
+          
+s = Solution()
+print(s.addDigits(38))
+print(s.addDigits(0))
