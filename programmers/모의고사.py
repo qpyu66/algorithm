@@ -15,3 +15,40 @@
 """
 
 
+# code refactoring
+def solution(answers):
+    answer = []
+    #per = {1:"1,2,3,4,5"}
+    one = [1,2,3,4,5]
+    two = [2,1,2,3,2,4,2,5]
+    three = [3,3,1,1,2,2,4,4,5,5]
+    count01 = 0
+    count02 = 0
+    count03 = 0
+    ans = []
+    
+    
+    
+    for i in range(len(answers)):
+        if answers[i] == one[i%len(one)]:
+            count01 += 1
+        if answers[i] == two[i%len(two)]:
+            count02 += 1
+        if answers[i] == three[i%len(three)]:
+            count03 += 1    
+    ans = [count01,count02,count03]
+    
+    print('ans > ',ans)
+    
+    for idx,val in enumerate(ans):
+        print('idx > ',idx,', val > ',val)
+        if val == max(ans):
+            answer.append(idx+1)
+    
+    
+    print(answer)
+    #return answer
+
+
+print(solution([1,2,3,4,5])) #1
+print(solution([1,3,2,4,2])) #1,2,3
