@@ -24,4 +24,24 @@ arr	return
 
 """
 
+def solution(x):
+    pl = 0    
+    plist = list(str(x))
+    for i in range(len(plist)):
+        pl += int(plist[i])
+        
+    ans = int(x) % pl
+
+    if (ans == 0):
+        return True
+    else:
+        return False
+
+#code refactoring
+def Harshad(n):
+    return n % sum([int(c) for c in str(n)]) == 0
+
+
+print(solution("10"))
+print(solution("11"))
 
