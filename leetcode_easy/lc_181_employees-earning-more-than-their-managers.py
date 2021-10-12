@@ -26,6 +26,12 @@ Given the Employee table, write a SQL query that finds out employees who earn mo
 +----------+
 """
 
+# SELECT e1.name AS Employee
+# FROM Employee AS e1
+#     INNER JOIN Employee AS e2 ON e1.managerID = e2.ID
+# WHERE e1.salary > e2.Salary
+
+
 
 
 

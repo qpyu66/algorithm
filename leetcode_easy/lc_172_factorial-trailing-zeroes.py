@@ -43,7 +43,7 @@ Constraints:
 
 
 #code refactoring
-class Solution1:
+class Solution:
     def trailingZeroes(self, n: int) -> int:  
         ans = 0
         while n:
@@ -53,7 +53,7 @@ class Solution1:
 
 
 
-        
+    
 s = Solution()
 print(s.trailingZeroes(3))
 print(s.trailingZeroes(5))

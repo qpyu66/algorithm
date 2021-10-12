@@ -19,3 +19,20 @@ price	money	count	result
 같은 코드를 제출한 사람이 여럿이라면 코드를 가장 먼저 제출한 분께 상품을 드립니다.
 좋아요 수가 동일할 경우 코드를 가장 먼저 제출한 분께 상품을 드립니다.
 """
+def solution(price, money, count):
+    ans = 0
+    ans2 = []
+    
+    for i in range(1,count+1):
+        ans = price * i
+        ans2.append(ans)
+
+    if (sum(ans2)-money <= -1):
+        return 0
+    else:
+        return sum(ans2)-money
+
+
+print(solution(3,20,4))
+print(solution(3,30,4))
+print(solution(3,31,4))
