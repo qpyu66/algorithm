@@ -66,6 +66,27 @@ def solution(board, moves):
     print(same,len(same))
     
     
+   
+
+## 
+def solution(board, moves):
+    answer = 0
+    ans = []
+    
+    for m in moves:
+        for i in range(len(board[0])):
+            if board[i][m-1] != 0:
+                ans.append(board[i][m-1])
+                board[i][m-1] = 0  
+                
+                if len(ans) > 1 and ans[-1] == ans[-2]: 
+                    ans.pop(-1)
+                    ans.pop(-1)
+                    answer +=2           
+                break              
+    return answer
+    
+    
 print(solution([[0,0,0,0,0],
                 [0,0,1,0,3],
                 [0,2,5,0,1],
