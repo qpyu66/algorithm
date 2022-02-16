@@ -21,3 +21,31 @@ numbers	return
 11과 011은 같은 숫자로 취급합니다.
 
 """
+
+##  에라토스테네스의 체
+def solution(n):
+    answer = [True] * (n+1)
+    m = int(n ** 0.5)
+    
+    for i in range(2,m+1):
+        if answer[i] == True:
+            for j in range(i+i,n+1,i):
+                answer[j] = False
+    a = [i for i in range(2,n+1) if answer[i] == True]
+    return len(a)
+  
+  
+  ## code refactoring
+
+
+def solution(n):
+    num=set(range(2,n+1))
+
+    for i in range(2,n+1):
+        if i in num:
+            num-=set(range(2*i,n+1,i))
+    return len(num)
+
+
+print(solution(10))
+print(solution(5))
